@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github System Delete</title>
+</head>
+<body>
+    <h1 id="delete-item">Delete This Title</h1>
+    <input id="input-box" type="text" placeholder="Type delete">
+    <button id="btn-delete" disabled>Delete</button>
+</body>
+<script>
+
+    document.getElementById('input-box').addEventListener('keyup',function(event){
+
+        const Text= event.target.value;
+
+        const deleteButton= document.getElementById('btn-delete');
+
+        if(Text === 'delete'){
+            deleteButton.removeAttribute('disabled');
+
+        }
+        else{
+            deleteButton.setAttribute('disabled',true);
+        }
+
+        
+
+    })
+
+    document.getElementById('btn-delete').addEventListener('click',function(){
+
+        const deleteBox= document.getElementById('delete-item');
+        deleteBox.style.display='none';
+    })
+</script>
+</html>
