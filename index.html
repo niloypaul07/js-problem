@@ -4,66 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVENT HANDLER</title>
-</head>
-<body>
-    <h1>Dom Special</h1>
-    <h3 id="new-handler">Event Handle</h3>
-    <p id="field">INPUT CHANGE</p>
-    <input id="input-field" type="text">
-    <button id="bat-content">UPDATE</button>
-
-    <button onclick="console.log(5)">Click Me</button>
-    <button onclick="document.body.style.backgroundColor= 'green'">Make Green</button>
-    <button onclick="MakeBlue()">Make Blue</button>
-    <button id="make-yellow">Make Yellow</button>
-    <button id="make-purple">Make Purple</button>
-    <button id="make-golden">Make Golden</button>
-    <button onclick="buttonHandle()">Final handler</button>
-    <button id="event-listner">Event handle by addlistener</button>
-   
-
-    <script>
-        const handleButton= document.getElementById('new-handler');
-        function buttonHandle(){
-            handleButton.innerText='Change Handle';
-
+    <title>Tour of Dom </title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+       .dom li{
+            color: yellowgreen;
         }
-
-        document.getElementById("event-listner").addEventListener('click', function(){
-            const AddListnerButton= document.getElementById('new-handler');
-            AddListnerButton.innerText='new handler';
-
-
-
-        })
-
-        document.getElementById('bat-content').addEventListener('click',function(){
-
-            const inputField= document.getElementById('input-field');
-            const inputText= inputField.value;
-
-            const p= document.getElementById('field');
-            p.innerText=inputText;
-
-            inputText.value='';                                          
-
-
-
-
-
-
-
-
-        })
-
-
-
+        #places-visit{
+            color: black;
+        }
+        .name{
+            color: blue;
+        }
         
+    </style>
+</head> 
 
+<body>
+    <header>
+        <h1>Welcome To my Dom</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus voluptatum repellat quibusdam perspiciatis, magnam quaerat earum voluptates, sapiente tempore, culpa sequi tempora ad error repudiandae atque perferendis nulla consectetur dolores!</p>
+    </header>
+    <main id="main-container">
+        <section class="dom">
+            <h1>Awesome Dom</h1>
 
+        <ul>
+            <li class="name">Niloy</li>
+            <li class="name">Leonardo</li>
+            <li class="name">Stifen</li>
+        </ul>
+        </section>
+        <section>
+            <h1 id="places-visit" class="bg">Places i like to visit</h1>
+
+        <ul id="place-list">
+            <li>Cox's bazar</li>
+            <li>Sylhet</li>
+            <li>Khulna</li>
+        </ul>
+        </section>
+        <section id="name">
+        <h1>Awesome Dom</h1>
+
+        <ul>
+            <li>Niloy</li>
+            <li>Leonardo</li>
+            <li>Stifen</li>
+        </ul>
+    </section>
+
+    </main>
+    <script src="Js/Dom.js"></script>
+    <script src="Js/append.js"></script>
+    <script src="Js/styleJs.js"></script>
+    <script>
+        const liCollection= document.getElementsByTagName('li');
+        console.log(liCollection);
+        for (const li of liCollection){
+            console.log(li.innerText);
+        }
+        const hCollection= document.getElementsByTagName('h1');
+        console.log(hCollection);
+        for (const h1 of hCollection){
+            console.log(h1.innerText);
+        }
+        const ClassCollection= document.getElementsByClassName('name');
+        console.log(ClassCollection);
+        for (const place of ClassCollection){
+           console.log(place.innerText);}
+
+            const placeChange= document.getElementById('places-visit');
+                placeChange.innerText= 'Places change by JS';
+            
+
+        const queryOF= document.querySelectorAll('.dom li');
+        console.log(queryOF); 
+        for(const li of queryOF){
+            console.log(li.innerText);
+
+        }       
     </script>
-
-<script src="JS/event.js"></script>
 </body>
-</html> 
+</html>
